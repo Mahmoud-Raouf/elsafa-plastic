@@ -12,10 +12,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'products',
-    'salary',
+    'selling',
     'expenses',
     'orders',
+    'dashboard',
+
     'bootstrap4',
     'django.contrib.humanize',
 ]

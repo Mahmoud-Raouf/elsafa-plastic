@@ -18,7 +18,6 @@
                 <div class="col-md-12">
                     <div class="card o-hidden mb-4">
                         <div class="card-header d-flex align-items-center border-15">
-                            <h3 class="w-515 float-left card-title m-15"></h3>
                         </div>
                         <div>
                             <div class="table-responsive">
@@ -53,7 +52,7 @@
                                             <td >| {{product.type4}}| <br>| نسبة {{product.type4_count}} | {{product.price4|floatformat}}</td>
                                             <td >| {{product.type5}}| <br>| نسبة {{product.type5_count}} | {{product.price5|floatformat}}</td>
                                             <td >{{product.description}}</td>
-                                            <td >{{product.price|floatformat }}</td>
+                                            <td >{{product.price }}</td>
                                             <td>{{product.create_at|date:'d-m-Y'}}</td>
                                             <td>{{product.update_by|date:'d-m-Y'}}</td>
                                             <td><a class="text-success mr-2" href="{% url 'products:edit_productmix' product.id %}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="{% url 'products:productmix_delete' product.id %}"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>

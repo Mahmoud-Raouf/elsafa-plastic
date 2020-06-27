@@ -8,9 +8,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('products/', include('products.urls' , namespace='products')),
-    path('salary/', include('salary.urls' , namespace='salary')),
+    path('selling/', include('selling.urls' , namespace='selling')),
     path('expenses/', include('expenses.urls' , namespace='expenses')),
     path('orders/', include('orders.urls' , namespace='orders')),
+    path('dashboard/', include('dashboard.urls' , namespace='dashboard')),
 ]
 
 if settings.DEBUG is True:

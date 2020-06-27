@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% block 'body' %}
+
+
+<div class="main-content-wrap sidenav-open d-flex flex-column">
+<!-- ============ Body content start ============= -->
+<div class="main-content">
+<!-- <div class="breadcrumb">
+<h1>لوحه التحكم </h1>
+</div>
+<div class="separator-breadcrumb border-top"></div> -->
+<div class="row">
+<div class="col-lg-6 col-md-6 mx-auto">
+    <p>اظهار النتائج</p>
+    <div class="card mb-5">
+        <div class="card-body">
+            <div class="row row-xs">
+                <div class="col-md-5">
+                
+                    <input class="form-control " placeholder="من" id="datepicker1"/>
+                </div>
+                <div class="col-md-5 mt-3 mt-md-0">
+                    <input class="form-control" placeholder="الي" id="datepicker2"/>
+                </div>
+                <div class="col-md-2 mt-3 mt-md-0">
+                    <button class="btn btn-primary btn-block">اظهار</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- content goes here-->
+
+<!-- section 1-->
+<section class="ul-widget-stat-s1">
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Car-Items"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">العملاء</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">{{customers}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Data-Upload"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">الخلطات</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">{{productmix}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Feedburner"></i>
+                <div class="content">
+                    <p class="text-muted  mt-2 mb-0">الموظفون </p>
+                    <p class="text-primary text-24 line-height-1 mb-2">{{workers}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-File-Horizontal-Text"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">الطلبات</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">1200</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- end:: section 1-->
+<!-- section 1-->
+<section class="ul-widget-stat-s1">
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Car-Items"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">الاشتراكات</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">205</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Data-Upload"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0"> المدن</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">4021</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Feedburner"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">طلبات خاصه</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">80</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-File-Horizontal-Text"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">الدعم</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">1200</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- end:: section 1-->
+<!-- section 1-->
+<section class="ul-widget-stat-s1">
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Car-Items"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">سائق جديد</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">205</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+            <div class="card-body text-center"><i class="i-Data-Upload"></i>
+                <div class="content">
+                    <p class="text-muted mt-2 mb-0">شركه جديده</p>
+                    <p class="text-primary text-24 line-height-1 mb-2">4021</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- end:: section 1-->
+
+<!-- end of main-content -->
+</div><!-- Footer Start -->
+<div class="flex-grow-1"></div>
+<div class="app-footer">
+<div class="footer-bottom border-top pt-3 d-flex flex-column flex-sm-row align-items-center">
+<a class="btn btn-primary text-white btn-rounded" href="https://themeforest.net/item/gull-bootstrap-laravel-admin-dashboard-template/23101970" target="_blank">Buy Gull HTML</a>
+<span class="flex-grow-1"></span>
+<div class="d-flex align-items-center">
+    <img class="logo" src="../../dist-assets/images/logo.png" alt="">
+    <div>
+        <p class="m-0">&copy; 2018 Gull HTML</p>
+        <p class="m-0">All rights reserved</p>
+    </div>
+</div>
+</div>
+</div>
+<!-- fotter end -->
+</div>
+</div><!-- ============ Search UI Start ============= -->
+{% endblock %}
