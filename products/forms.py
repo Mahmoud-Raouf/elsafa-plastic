@@ -6,11 +6,11 @@ class ProductMixForm(forms.ModelForm):
     class Meta:
         model = ProductMix
         fields = ("name","image"
-        ,"type1",'type1_count','type1_price','price1'
-        ,"type2",'type2_count','type2_price','price2',
-        "type3",'type3_count' ,'type3_price','price3'
-        ,"type4",'type4_count','type4_price','price4',
-        "type5",'type5_count','type5_price','price5',
+        ,"type1",'type1_count','type1_price',
+        "type2",'type2_count','type2_price',
+        "type3",'type3_count' ,'type3_price',
+        "type4",'type4_count','type4_price',
+        "type5",'type5_count','type5_price',
         "description")
 class RollForm(forms.ModelForm):
     class Meta:

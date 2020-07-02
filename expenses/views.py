@@ -1,9 +1,12 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Servicing , Workers
 from .forms import WorkersForm ,ServicingForm
+from expenses.models import Amount_Received
+from expenses.forms import Amount_ReceivedForm
 
 # Start Workers
 def workers_list(request):
+    # workers = Amount_Received.objects.all()
     workers = Workers.objects.all()
     return render(request ,'workers/workers_list.html', {
         'workers' : workers ,
@@ -45,6 +48,49 @@ def workers_delete(request, pk):
     workers_delete.delete()
     return redirect('expenses:workers_list')
 # end Workers
+
+
+# Start Amount_Received
+def Amount_Received_list(request, pk):
+    amount_received = Amount_Received.objects.filter(workers = pk)
+    return render(request ,'amount_received/Amount_Received_list.html', {
+        'amount_received' : amount_received ,
+        'title' : 'قائمة الموظفون'
+    })
+
+def add_amount_received(request):
+    amount_received_form = Amount_ReceivedForm(request.POST)
+    if request.method == 'POST':
+        amount_received_form = Amount_ReceivedForm(request.POST)
+        if amount_received_form.is_valid():
+            amount_received_form.save()
+            return redirect('expenses:workers_list')
+    else:
+        amount_received_form = Amount_ReceivedForm()
+    return render(request ,'amount_received/add_amount_received.html', {
+        'amount_received_form' : amount_received_form,
+    })
+
+def edit_amount_received(request , pk):
+    obj = get_object_or_404(Amount_Received , pk=pk)
+    edit_amount_received_form = Amount_ReceivedForm(request.POST or None , instance=obj)
+    if request.method == 'POST':
+        edit_amount_received_form = Amount_ReceivedForm(request.POST or None , instance=obj)
+        if edit_amount_received_form.is_valid():
+            edit_amount_received_form.save()
+            return redirect('expenses:workers_list')
+    else:
+        edit_amount_received_form = Amount_ReceivedForm(instance=obj)
+    return render(request ,'amount_received/edit_amount_received.html', {
+        'edit_amount_received_form' : edit_amount_received_form,
+    })
+
+
+def Amount_Received_delete(request, pk):
+    workers_delete = Amount_Received.objects.get(pk=pk)
+    workers_delete.delete()
+    return redirect('expenses:workers_list')
+# end Amount_Received
 
 
 # Start Servicing

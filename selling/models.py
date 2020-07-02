@@ -59,9 +59,9 @@ class Purchasing(models.Model):
 class Customer(models.Model):
     name                    = models.CharField(_("إسم العميل"),max_length=150)
     code                      = models.IntegerField(_("كود العميل"), default=random_string)
-    phone1                    = models.IntegerField(_("رقم العميل "))
-    phone2                    = models.IntegerField(_("إضافة رقم ثانى"))
-    phone3                    = models.IntegerField(_("إضافة رقم ثالث"))
+    phone1                    = models.CharField(_("رقم العميل "),max_length=50)
+    phone2                    = models.CharField(_("إضافة رقم ثانى"),max_length=50)
+    phone3                    = models.CharField(_("إضافة رقم ثالث"),max_length=50)
     description          = models.TextField(_("وصف العميل"))
     address                 = models.CharField(_("العنوان"),max_length=150)
     create_at             = models.DateTimeField(_("تاريخ الإضافة"), default = timezone.now) 

@@ -16,8 +16,6 @@ class Workers(models.Model):
     create_at                        = models.DateTimeField(_("تاريخ الإضافة"), default = timezone.now) 
     update_by                       = models.DateTimeField(_("تم التحديث :"),auto_now_add=True, blank=True, null=True)
     price                                = models.FloatField(_("راتب العامل "))
-    amount_received           = models.FloatField(_("السلف"), blank=True, null=True)
-    remaining_amount        = models.FloatField(_("صافي المرتب "), blank=True, null=True)
 
     class Meta:
         verbose_name = _("Workers")
@@ -26,15 +24,41 @@ class Workers(models.Model):
     def __str__(self):
         return str(self.name)
 
+    # def save(self, *args, **kwargs):
+    #     self.remaining_amount = self.price - self.amount_received
+    #     super(Workers, self).save(*args, **kwargs)
+
+
+
+
+class Amount_Received(models.Model):
+    workers                          = models.ForeignKey("Workers", verbose_name=_("العامل"), on_delete=models.CASCADE)
+    amount_received           = models.FloatField(_("قيمة السلفة"))
+    remaining_amount        = models.FloatField(_("صافي المرتب "), blank=True, null=True)
+    description                     = models.TextField(_("سبب السلفة"))
+    create_at                        = models.DateTimeField(_("تاريخ الإضافة"), default = timezone.now) 
+    update_by                       = models.DateTimeField(_("تم التحديث :"),auto_now_add=True, blank=True, null=True)
+
+    class Meta:
+        verbose_name             = _("Rmount_Received")
+        verbose_name_plural = _("Rmount_Receiveds")
+
+    def __str__(self):
+        return str(self.workers)
+
     def save(self, *args, **kwargs):
-        self.remaining_amount = self.price - self.amount_received
-        super(Workers, self).save(*args, **kwargs)
+        self.remaining_amount = self.workers.price - self.amount_received
+        super(Amount_Received, self).save(*args, **kwargs)
+
+
+
+
 
 class Servicing(models.Model):
-    name                               = models.CharField(_("عنوان الصيانة"),max_length=150)
-    description                     = models.TextField(_("وصف الصيانة"))
-    create_at                        = models.DateTimeField(_("تاريخ الإضافة"), default = timezone.now) 
-    update_by                        = models.DateTimeField(_("تم التحديث :"),auto_now_add=True, blank=True, null=True)
+    name                              = models.CharField(_("عنوان الصيانة"),max_length=150)
+    description                    = models.TextField(_("وصف الصيانة"))
+    create_at                       = models.DateTimeField(_("تاريخ الإضافة"), default = timezone.now) 
+    update_by                      = models.DateTimeField(_("تم التحديث :"),auto_now_add=True, blank=True, null=True)
     cost                                = models.FloatField(_("تكلفة الصيانه"))
 
     class Meta:

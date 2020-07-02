@@ -19,4 +19,11 @@ urlpatterns = [
     path('servicing_delete/<int:pk>/' , views.servicing_delete, name= 'servicing_delete'),
     # end servicing
 
+    # Start servicing
+    path('amount_received/<int:pk>/' , views.Amount_Received_list, name= 'amount_received_list'),
+    path('add_amount_received/' , views.add_amount_received, name= 'add_amount_received'),
+    path('edit_amount_received/<int:pk>/' , views.edit_amount_received, name= 'edit_amount_received'),
+    path('amount_received_delete/<int:pk>/' , views.Amount_Received_delete, name= 'amount_received_delete'),
+    # end servicing
+
 ]

@@ -100,7 +100,7 @@ def add_customer(request):
         customer_form = CustomerForm(request.POST or None , request.FILES)
         if customer_form.is_valid():
             customer_form.save()
-            return redirect('salary:customer_list')
+            return redirect('selling:customer_list')
     else:
         customer_form = CustomerForm()
     return render(request ,'customer/add_customer.html', {
@@ -114,7 +114,7 @@ def edit_customer(request , pk):
         edit_customer_form = CustomerForm(request.POST or None , request.FILES, instance=obj)
         if edit_customer_form.is_valid():
             edit_customer_form.save()
-            return redirect('salary:customer_list')
+            return redirect('selling:customer_list')
     else:
         edit_customer_form = CustomerForm(instance=obj)
     return render(request ,'customer/edit_customer.html', {
@@ -123,6 +123,6 @@ def edit_customer(request , pk):
 
 def customer_delete(request , pk):
     customer_delete = Customer.objects.get(pk=pk).delete()
-    return redirect('salary:customer_list')
+    return redirect('selling:customer_list')
 
 # end Customer

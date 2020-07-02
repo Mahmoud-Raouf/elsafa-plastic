@@ -34,22 +34,20 @@
                                             <th scope="col">تاريخ الإضافة</th>
                                             <th scope="col">الراتب </th>
                                             <th scope="col">السلف </th>
-                                            <th scope="col">صافي المرتب </th>
                                             <th scope="col">إعدادات  </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for worker in workers %}
-                                        <tr>
+                                        {% for worker in workers  %}
+                                        <tr> 
                                             <th scope="row">{{worker.id}}</th>
                                             <td>{{worker.name}}</td>
                                             <td>{{worker.type_of_person}}</td>
                                             <td>{{worker.description}}</td>
                                             <td>{{worker.create_at|date:'d-m-Y'}}</td>
                                             <td>{{worker.price}}</td>
-                                            <td>{{worker.amount_received}}</td>
-                                            <td>{{worker.remaining_amount}}</td>
-                                            <td><a class="text-success mr-2" href="{% url 'expenses:edit_workers' worker.id %}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="{% url 'expenses:workers_delete' worker.id %}"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                                            <td><a href="{% url 'expenses:amount_received_list' worker.id %}"><button type="submit" class="btn btn-block btn-primary">التفاصيل</button></a></td>
+                                            <td><a class="text-success mr-2" href=""><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="{% url 'expenses:workers_delete' worker.id %}"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
                                         </tr>
                                         {% endfor %}
 

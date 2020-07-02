@@ -6,7 +6,7 @@ app_name = 'selling'
 urlpatterns = [
     
     # Start Salary
-    path('' , views.salary_list, name= 'salary_list'),
+    path('salary/' , views.salary_list, name= 'salary_list'),
     path('add_salary/' , views.add_salary, name= 'add_salary'),
     path('edit_salary/<int:pk>/' , views.edit_salary, name= 'edit_salary'),
     path('salary_delete/<int:pk>/' , views.salary_delete, name= 'salary_delete'),

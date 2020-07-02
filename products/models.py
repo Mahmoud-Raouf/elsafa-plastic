@@ -65,6 +65,7 @@ class ProductMix(models.Model):
         self.price3 = self.type3_price * self.type3_count
         self.price4 = self.type4_price * self.type4_count
         self.price5 = self.type5_price * self.type5_count
+        
         self.price = self.price1 + self.price2 + self.price3 + self.price4 + self.price5
         super(ProductMix , self).save(*args , **kwargs)
 
