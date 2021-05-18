@@ -9,11 +9,20 @@ def random_string():
     return str(random.randint(1, 10000))
 
 class Salary(models.Model):
+
+    order_status = {
+       ( 'لم يتم التحضير' , 'لم يتم التحضير'),
+        ('يتم التحضير الأن' , 'يتم التحضير الأن'),
+        ('تم التحضير' , 'تم التحضير'),
+        ('تم التسليم' , 'تم التسليم')
+    }
     name                    = models.CharField(_("إسم الفتورة"),max_length=150)
     typeofproducts   = models.ForeignKey('products.Product', verbose_name=_("typeofproducts"), on_delete=models.CASCADE)
     code                      = models.IntegerField(_("كود المنتج"), default=random_string)
+    order_status        =  models.CharField(_("حالة الفاتورة"),choices=order_status , default='لم يتم التحضير',max_length=150)
     description          = models.TextField(_("وصف المنتج"))
     address                = models.CharField(_("العنوان"),max_length=150)
+    phone_number   = models.CharField(_("رقم الهاتف"),max_length=150)
     create_at             = models.DateTimeField(_("تاريخ الإضافة"), default = timezone.now) 
     update_by           = models.DateTimeField(_("تم التحديث :"),auto_now_add=True, blank=True, null=True)
     price                     = models.FloatField(_("سعر المنتج"))

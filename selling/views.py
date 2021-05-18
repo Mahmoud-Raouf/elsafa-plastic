@@ -18,7 +18,7 @@ def add_salary(request):
         salary_form = SalaryForm(request.POST or None , request.FILES)
         if salary_form.is_valid():
             salary_form.save()
-            return redirect('salary:salary_list')
+            return redirect('selling:salary_list')
     else:
         salary_form = SalaryForm()
     return render(request ,'salary/add_salary.html', {
@@ -32,7 +32,7 @@ def edit_salary(request , pk):
         edit_salary_form = SalaryForm(request.POST or None , request.FILES , instance=obj)
         if edit_salary_form.is_valid():
             edit_salary_form.save()
-            return redirect('salary:salary_list')
+            return redirect('selling:salary_list')
     else:
         edit_salary_form = SalaryForm( instance=obj)
     return render(request ,'salary/edit_salary.html', {
@@ -41,7 +41,7 @@ def edit_salary(request , pk):
 
 def salary_delete(request , pk):
     salary_delete = Salary.objects.get(pk=pk).delete()
-    return redirect('salary:salary_list')
+    return redirect('selling:salary_list')
 # end Salary
 
 

@@ -35,7 +35,7 @@
                                             <th scope="col">وصف اللفة </th>
                                             <th scope="col">تاريخ الإضافة </th>
                                             <th scope="col">أخر تحديث </th>
-                                            <th scope="col">تكلفة الكيلو للفة </th>
+                                            <th scope="col">تكلفة الكيلو للخلطة </th>
                                             <th scope="col">سعر الكيلو للفة </th>
                                             <th scope="col">  سعر اللفة </th>
                                             <th scope="col">هامش الربح</th>
@@ -53,10 +53,10 @@
                                             <td>{{roll.description}}</td>
                                             <td>{{roll.create_at|date:'d-m-Y'}}</td>
                                             <td>{{roll.update_by|date:'d-m-Y'}}</td>
-                                            <td>{{roll.cost.price|floatformat}}</td>
-                                            <td>{{roll.price|floatformat}}</td>
-                                            <td>{{roll.roll_price|floatformat}}</td>
-                                            <td>{{roll.profit|floatformat}}</td>
+                                            <td>{{roll.cost.price|floatformat:2}}</td>
+                                            <td>{{roll.price|floatformat:2}}</td>
+                                            <td>{{roll.roll_price|floatformat:2}}</td>
+                                            <td>{{roll.profit|floatformat:2}}</td>
                                             <td><a class="text-success mr-2" href="{% url 'products:edit_roll' roll.id %}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="{% url 'products:roll_delete' roll.id %}"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
                                         </tr>
                                         {% endfor %}

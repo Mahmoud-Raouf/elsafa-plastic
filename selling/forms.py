@@ -5,7 +5,7 @@ class SalaryForm(forms.ModelForm):
     
     class Meta:
         model = Salary
-        fields = ("name" , "typeofproducts" , "description" , "price" , "count" , "profit")
+        fields = ("name" , "typeofproducts" ,'order_status', 'address' , 'phone_number' , "description" , "price" , "count" , "profit")
 
 class PurchasingForm(forms.ModelForm):
     

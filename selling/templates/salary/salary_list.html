@@ -27,34 +27,36 @@
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">إسم العميل </th>
+                                    <th scope="col">إسم الفتورة </th>
                                     <th scope="col">الكود </th>
-                                    <th scope="col">رقم الهاتف </th>
-                                    <th scope="col">هاتف أخر</th>
-                                    <th scope="col">هاتف أخر </th>
+                                    <th scope="col">وصف المنتج </th>
+                                    <th scope="col">العنوان</th>
+                                    <th scope="col">رقم الهاتف</th>
                                     <th scope="col">تاريخ الإضافة</th>
                                     <th scope="col">أخر تحديث </th>
-                                    <th scope="col">العنوان</th>
-                                    <th scope="col">البضاعة المسحوبة</th>
-                                    <th scope="col">البضاعة الجديدة</th>
+                                    <th scope="col">سعر المنتج</th>
+                                    <th scope="col">الكمية</th>
+                                    <th scope="col">سعر الفتورة</th>
+                                    <th scope="col">حالة الطلب </th>
                                     <th scope="col">الإعدادات </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for customer in customer_list %}
+                                {% for salary in salary_list %}
                                 <tr>
-                                    <th scope="row">{{customer.id}}</th>
-                                    <td>{{customer.name}}</td>
-                                    <td>{{customer.typeofproducts}}</td>
-                                    <td>{{customer.code}}</td>
-                                    <td>{{customer.description}}</td>
-                                    <td>{{customer.address}}</td>
-                                    <td>{{customer.create_at|date:'d-m-Y'}}</td>
-                                    <td>{{customer.update_by|date:'d-m-Y'}}</td>
-                                    <td>{{customer.price}}</td>
-                                    <td>{{customer.count}}</td>
-                                    <td>{{customer.profit}}</td>
-                                    <td><a class="text-success mr-2" href="{% url 'selling:edit_customer' customer.id %}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="{% url 'selling:customer_delete' customer.id %}"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                                    <th scope="row">{{salary.id}}</th>
+                                    <td>{{salary.name}}</td>
+                                    <td>{{salary.code}}</td>
+                                    <td>{{salary.description}}</td>
+                                    <td>{{salary.address}}</td>
+                                    <td>{{salary.phone_number}}</td>
+                                    <td>{{salary.create_at|date:'d-m-Y'}}</td>
+                                    <td>{{salary.update_by|date:'d-m-Y'}}</td>
+                                    <td>{{salary.price}}</td>
+                                    <td>{{salary.count}}</td>
+                                    <td>{{salary.profit}}</td>
+                                    <td>{{salary.order_status}}</td>
+                                    <td><a class="text-success mr-2" href="{% url 'selling:edit_salary' salary.id %}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="{% url 'selling:salary_delete' salary.id %}"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
                                 </tr>
                                 {% endfor %}
 

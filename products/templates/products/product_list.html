@@ -53,9 +53,9 @@
                                             <td>{{product.description}}</td>
                                             <td>{{product.create_at|date:'d-m-Y'}}</td>
                                             <td>{{product.update_by|date:'d-m-Y'}}</td>
-                                            <td>{{product.cost.price}}</td>
-                                            <td>{{product.price}}</td>
-                                            <td>{{product.profit}}</td>
+                                            <td>{{product.cost.price|floatformat:2}}</td>
+                                            <td>{{product.price|floatformat:2}}</td>
+                                            <td>{{product.profit|floatformat:2}}</td>
                                             <td><a class="text-success mr-2" href="{% url 'products:edit_product' product.id %}"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="{% url 'products:product_delete' product.id %}"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
                                         </tr>
                                         {% endfor %}

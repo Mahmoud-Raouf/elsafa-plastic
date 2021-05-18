@@ -5,7 +5,7 @@ import random
 from django.template.defaultfilters import floatformat
 
 def random_string():
-    return str(random.randint(10000, 99999))
+    return str(random.randint(1, 100))
 
 class ProductMix(models.Model):
 
